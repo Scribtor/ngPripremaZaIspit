@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs'
 import { MainClass } from '../model/MainClass';
 import { VebService } from '../services/veb.service';
@@ -19,6 +19,8 @@ export class WineListComponent implements OnInit,OnDestroy {
       name:""
     }
   };
+  // Ovo su prvo glavni parametri, a zatim definisani objekat sa svojim poljima koje server
+  // može da razume (filter,cuising,skipass....)
   constructor(private srv:VebService)
   {
   }
