@@ -1,5 +1,5 @@
 {
-  "name": "NodeBackend",
+  "name": "node-backend",
   "version": "1.0.0",
   "description": "A simple backend for an angular app.",
   "main": "server.js",

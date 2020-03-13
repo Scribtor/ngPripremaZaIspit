@@ -25,7 +25,7 @@ export class VebService {
     {
       qP=
       {
-        filter: new HttpParams().set('sort',p.sort || "")
+        params: new HttpParams().set('sort',p.sort || "")
                                 .set('sortDirection',p.sortDirection || "")
                                 .set('page',p.page.toString() || "")
                                 .set('pageSize',p.pageSize.toString() || "")
