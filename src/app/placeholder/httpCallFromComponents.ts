@@ -1,4 +1,4 @@
-import { VebServisService } from '../services/veb-servis.service';
+import { VebService } from '../services/veb.service';
 import { MainClass } from '../model/MainClass';
 import { Subscription } from 'rxjs';
 
@@ -6,7 +6,7 @@ export class dummy
 {
   field1:number;
   field2:MainClass[];
-  constructor(private srv:VebServisService)
+  constructor(private srv:VebService)
   {  }
 
   putHttp(p?:MainClass):Subscription
@@ -30,7 +30,7 @@ export class dummy
   }
   deleteHttp(p?:MainClass):Subscription
   {
-    return this.srv.deleteObject(p).subscribe
+    return this.srv.deleteObject(p.field2).subscribe
     (
      _x=>{},
      err=>{  console.log("error", err.statusText); },

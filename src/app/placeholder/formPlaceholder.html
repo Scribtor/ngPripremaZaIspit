@@ -2,25 +2,25 @@
 <!-- <p>{{ form1.status | json }}</p> -->
 <form [formGroup]="form1" (submit)="onSubmit()" novalidate>
 	<div class="form-group row">
-		<label for="name" class="col-2 col-form-label">Name</label>
+		<label for="field1" class="col-2 col-form-label">Name</label>
 		<div class="col-10">
-			<input class="form-control" type="text" id="name" placeholder="Name" name="name"
-			formControlName="name">
+			<input class="form-control" type="text" id="field1" placeholder="Name" name="field1"
+			formControlName="field1">
             <small class="text-danger"
-            *ngIf="form1.controls.name.touched && form1.controls.name.errors?.required"
+            *ngIf="form1.controls.field1.touched && form1.controls.field1.errors?.required"
             >This field is required</small>
             <small class="text-danger"
-            *ngIf="form1.controls.name.touched && form1.controls.name.errors?.minlength"
+            *ngIf="form1.controls.field1.touched && form1.controls.field1.errors?.minlength"
             >Wine name is required, and must be at least 2 characters long</small>
 		</div>
   </div>
 	<div class="form-group row">
-		<label for="description" class="col-2 col-form-label">Description</label>
+		<label for="field2" class="col-2 col-form-label">Description</label>
 		<div class="col-10">
-      <textarea class="form-control" rows="3" id="description" placeholder="Description"
-      name="description" formControlName="description"></textarea>
+      <textarea class="form-control" rows="3" id="field2" placeholder="Description"
+      name="field2" formControlName="field2"></textarea>
        <small class="text-danger"
-       *ngIf="form1.controls.description.touched && form1.controls.description.errors?.required"
+       *ngIf="form1.controls.field2.touched && form1.controls.field2.errors?.required"
        >This field is required</small>
 		</div>
 	</div>

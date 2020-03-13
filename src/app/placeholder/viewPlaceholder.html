@@ -10,9 +10,9 @@
 <div class="row">
     <div class="col"><wcellar-table
 
-         [Vina]="ListaVina"
+         [lista]="lista"
          (javiPromenuElem)="izmeniBrojElemenataPoStrani($event)"
-         (vinoDel)="refreshList()"
+         (delEmitter)="refreshList()"
          (sortiraj)="callSort($event)"
 
          ></wcellar-table></div>

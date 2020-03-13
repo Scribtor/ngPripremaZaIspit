@@ -1,15 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs'
 import { MainClass } from '../model/MainClass';
-import { VebServisService } from '../services/veb-servis.service';
+import { VebService } from '../services/veb.service';
 
 export class WineListComponent implements OnInit,OnDestroy {
 
   public poslatLimit:number=0;
-  public ListaVina: MainClass[]=[];
-  public httpRSVP:MainClass[]=[];
+  public lista: MainClass[]=[];
+  public odgSaServ:MainClass[]=[];
   public brojElemenataPoStranici:number=0;
-  public hstpParamS =
+  public paramZaServ =
   {
     sort:"",
     sortDirection:"",
@@ -19,7 +19,7 @@ export class WineListComponent implements OnInit,OnDestroy {
       name:""
     }
   };
-  constructor(private srv:VebServisService)
+  constructor(private srv:VebService)
   {
   }
 
@@ -47,10 +47,10 @@ export class WineListComponent implements OnInit,OnDestroy {
   }
   public praviListu(indexStart:number, indexEnd:number,brElem:number)
   {
-    this.ListaVina=[];
+    this.lista=[];
     for (let i = indexStart; i < indexEnd; i++)
     {
-      this.ListaVina.push(new MainClass(this.httpRSVP[i]));
+      this.lista.push(new MainClass(this.odgSaServ[i]));
     }
     this.brojElemenataPoStranici=brElem;
   }
@@ -61,11 +61,11 @@ export class WineListComponent implements OnInit,OnDestroy {
   }
   refreshList():Subscription
   {
-    return this.srv.getServRespWParam(this.hstpParamS).subscribe
+    return this.srv.getServRespWParam(this.paramZaServ).subscribe
     (
       data => {
         this.poslatLimit = data.results.length;
-        this.httpRSVP = data.results;
+        this.odgSaServ = data.results;
               },
       error => {
         console.log("error", error.statusText);
@@ -84,18 +84,18 @@ export class WineListComponent implements OnInit,OnDestroy {
   }
   callSort(p:string)
   {
-    if (this.hstpParamS.sort==p) {
-      if (this.hstpParamS.sortDirection=='desc') {
-        this.hstpParamS.sortDirection = '';}
-        else{this.hstpParamS.sortDirection='desc';}
+    if (this.paramZaServ.sort==p) {
+      if (this.paramZaServ.sortDirection=='desc') {
+        this.paramZaServ.sortDirection = '';}
+        else{this.paramZaServ.sortDirection='desc';}
     }else{
-      this.hstpParamS.sort=p;
-      this.hstpParamS.sortDirection='';
+      this.paramZaServ.sort=p;
+      this.paramZaServ.sortDirection='';
     }
     this.refreshList();
   }
   pretragaIme(p:string){
-    this.hstpParamS.filter.name=p;
+    this.paramZaServ.filter.name=p;
     this.refreshList();
   }
 }

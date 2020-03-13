@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { VebServisService } from '../services/veb-servis.service';
+import { VebService } from '../services/veb.service';
 import { MainClass } from '../model/MainClass';
 export class EditMainClassComponent implements OnInit {
   public form1:FormGroup;
@@ -13,7 +13,7 @@ export class EditMainClassComponent implements OnInit {
     private rt: Router,
     private fb:FormBuilder,
     private ar:ActivatedRoute,
-    private srv:VebServisService
+    private srv:VebService
     )
 
   {
