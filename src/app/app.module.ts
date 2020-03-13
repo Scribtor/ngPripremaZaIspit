@@ -7,10 +7,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
+import { DummyComponent } from './core/dummy/dummy.component';
+import { Dummy1Component } from './main/dummy1/dummy1.component';
+import { Dummy2Component } from './main/dummy2/dummy2.component';
+import { Dummy3Component } from './main/dummy3/dummy3.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DummyComponent,
+    Dummy1Component,
+    Dummy2Component,
+    Dummy3Component
   ],
   imports: [
     BrowserModule,
