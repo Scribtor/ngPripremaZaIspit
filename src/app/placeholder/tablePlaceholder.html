@@ -1,0 +1,15 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name <button class="btn btn-link" (click)="emitujSort('name')"><span class="fa fa-sort"></span></button> </th>
+      <th>  </th>
+      <th>  </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let x of lista">
+      <td>{{x.field1}}</td>
+      <td> <button class="btn btn-link" (click)="callDelete(x.field1)"><span class="fa fa-remove"></span></button> </td>
+      <td> <button class="btn btn-link" (click)="callEdit(x.field1)" ><span class="fa fa-edit"></span></button> </td>
+  </tbody>
+</table>

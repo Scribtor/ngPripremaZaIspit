@@ -1,0 +1,35 @@
+<!-- <p>{{ form1.value | json }}</p> -->
+<!-- <p>{{ form1.status | json }}</p> -->
+<form [formGroup]="form1" (submit)="onSubmit()" novalidate>
+	<div class="form-group row">
+		<label for="name" class="col-2 col-form-label">Name</label>
+		<div class="col-10">
+			<input class="form-control" type="text" id="name" placeholder="Name" name="name"
+			formControlName="name">
+            <small class="text-danger"
+            *ngIf="form1.controls.name.touched && form1.controls.name.errors?.required"
+            >This field is required</small>
+            <small class="text-danger"
+            *ngIf="form1.controls.name.touched && form1.controls.name.errors?.minlength"
+            >Wine name is required, and must be at least 2 characters long</small>
+		</div>
+  </div>
+	<div class="form-group row">
+		<label for="description" class="col-2 col-form-label">Description</label>
+		<div class="col-10">
+      <textarea class="form-control" rows="3" id="description" placeholder="Description"
+      name="description" formControlName="description"></textarea>
+       <small class="text-danger"
+       *ngIf="form1.controls.description.touched && form1.controls.description.errors?.required"
+       >This field is required</small>
+		</div>
+	</div>
+	<div class="form-group row float-right">
+		<div class="col-6">
+			<button class="btn btn-primary " (click)="onRevert()" type="button">Revert</button>
+		</div>
+		<div class="col-6">
+			<!-- <button class="btn btn-primary " id=btn1 type="submit" [disabled]="!(this.hasNumUpLow(this.form1.controls.region.value))||this.form1.invalid">Submit</button> -->
+			<button class="btn btn-primary " id=btn1 type="submit" [disabled]="this.form1.invalid">Submit</button>
+		</div>
+	</div>

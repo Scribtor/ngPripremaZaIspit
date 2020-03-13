@@ -1,0 +1,32 @@
+<h1><p>WineList Component</p></h1>
+
+<div class="row">
+    <div class="col"><wcellar-search-form
+
+      (srch)="pretragaIme($event)"
+
+      ></wcellar-search-form></div>
+</div>
+<div class="row">
+    <div class="col"><wcellar-table
+
+         [Vina]="ListaVina"
+         (javiPromenuElem)="izmeniBrojElemenataPoStrani($event)"
+         (vinoDel)="refreshList()"
+         (sortiraj)="callSort($event)"
+
+         ></wcellar-table></div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <wcellar-pagination
+
+        [primljenBrojElemenataPoStranici] = "brojElemenataPoStranici"
+        [primljenUkupanBrojElemenata]="poslatLimit"
+        (javljenaStranaPaginacije)="izmeniStranuPaginacije($event)"
+        (javljenBrojElemenata)="izmeniBrojElemenataPoStrani($event)"
+
+        ></wcellar-pagination>
+    </div>
+</div>
