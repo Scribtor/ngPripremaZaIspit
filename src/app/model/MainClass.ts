@@ -23,3 +23,6 @@ export class MainClass
     }
   }
 }
+// Neka bezveze klasa, sa par polja, i sa jednim koje može eventualno da bude podklasa ili povezana
+// klasa, pa sam i za tu eventualiju napisao prikladan konstruktor
+// što više da štedim vremena bezmozgnog kucanja, to bolje

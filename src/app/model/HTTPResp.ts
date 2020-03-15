@@ -15,3 +15,6 @@ export class ServerResponse
     }
   }
 }
+// Dummy preset odgovora sa servera, sa brojem objekata i tim nizom
+// Ovde pretpostavljam da ću odma da modelujem klasu u polje klase odgovora, ne bi li posle
+// mogao da direktno prosleđujem

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'ispit-root',
@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'DejanPFED25';
 
-  constructor(private rt:Router)
+  constructor()
   {
   }
 
-  goD1(){
-    this.rt.navigate(['/1']);
-  }
-  goD2(){
-    let p:HTMLInputElement =  document.getElementById('extra') as HTMLInputElement;
-    if (p.checked) {
-      this.rt.navigate(['/3']);
-    }else{
-    this.rt.navigate(['/2']);}
-  }
+  // goD1(){
+  //   this.rt.navigate(['/1']);
+  // }
+  // goD2(){
+  //   let p:HTMLInputElement =  document.getElementById('extra') as HTMLInputElement;
+  //   if (p.checked) {
+  //     this.rt.navigate(['/3']);
+  //   }else{
+  //   this.rt.navigate(['/2']);}
+  // }
 }
