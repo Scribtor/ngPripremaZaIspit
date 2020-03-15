@@ -101,3 +101,8 @@ export class WineListComponent implements OnInit,OnDestroy {
     this.refreshList();
   }
 }
+// Logika određivanja krajnjeg indeksa nad nekim nizom
+// Logika paginacije kako će izgledati
+// Implementacija promene broja elemenata, spram javljenog iz podkomponente paginacije
+// Logika, iako poduža, sortiranja
+// metoda dobavljanja podataka sa server

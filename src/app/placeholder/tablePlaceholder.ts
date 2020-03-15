@@ -31,3 +31,9 @@ export class TableComponent implements OnInit {
   }
 
 }
+// Ovo je primer prepisan iz projekta s vinima, gde paginacija i tabela mogu rame uz rame da stoje
+// Ali biće drugih situacija gde to neće biti moguće
+// Zato sam i usvojio da paginacija može i treba da bude sama za sebe da stoji
+// Slično kao i paginacija, i tabela zavisi samo od niza objekata koje dobije od pozivajuće
+// komponente, i onda spram toga, ngfor-om pravi listu za prikaz, a podatke prikazuje interpolacijom
+// Za razliku od paginacije, tabela emituje sort pravilo i ID objekta za brisanje
