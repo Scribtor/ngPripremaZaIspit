@@ -36,3 +36,18 @@
       </option>
   </select>
 </div>
+<!-- Moja lično pisana BOGOMDANA paginacija sa malim kržljavim selectom koji izvršava promenu  -->
+<!-- broja elemenata koji se prikazuju -->
+<!-- Jedino ograničenje koje trenutno ima je da je zavisna od toga da komponenta koja je proziva -->
+<!-- joj takođe i prosledi tačno koliko je elemenata tu za prikaz,-->
+<!-- odnosno da prosledi niz objekata, kao i da od paginacije  -->
+<!-- očekuje dva javljanja, kada se menja stranica paginacije, i kada se menja broj elemenata  -->
+<!-- po strani, na šta roditeljska komponenta mora da odgovori promenom liste koju gradi -->
+<!-- Ovde malo varam, tako što u roditeljskoj komponenti uvek u promeni broja elemenata -->
+<!-- prozivam metodu koja stavlja stranu paginacije na "1"  -->
+<!-- jer želim da izbegnem nemoguće situacije -->
+<!-- ja sam to kod sebe rešio tako što u dva polja koji su niz objekata čuvam (skoro) -->
+<!-- iste stvari. jedno polje dobija odgovor sa servera, a drugo polje je manje ili jednako -->
+<!-- nikad veće od prvog polja. prvo polje se menja kada se poziva server, što sa paginacijom -->
+<!-- veze jedne nema, a drugo polje se iznova i iznova gradi ponovo, spram prvog polja -->
+<!-- i prosleđenih elemenata paginacije, ali u komponenti koja je roditelj ovoj -->

@@ -35,8 +35,12 @@ export class EditMainClassComponent implements OnInit {
       this.obj1 = x;
       this.form1.patchValue(this.obj1)
            },
+          //  Ovde je glavno dešavanje, po dolasku podataka
       err => {   console.log("error", err.statusText);  },
+      // Ispis eventualnih grešaka u konzolu
       () => {}
+      // Zgodno za kontrolu toka, ovo se izvršava NA SAMOM KRAJU asinhronog poziva, baš kad imamo
+      // podatke
     );
   }
 
@@ -88,3 +92,11 @@ export class EditMainClassComponent implements OnInit {
       })
   }
 }
+// Primer fajla koji odgovara istoimenom HTML-u i kojem samo treba dodati/oduzeti polja i promeniti
+// tipove za vrednosti tih polja. Maksimalno skraćen posao za pripremu forme
+// Ovo na ispitu će samo zahtevati refaktorisanje osim polja, refaktorisanje eventualno validatora
+// i ne daj Bože custom validacije, dodavanje metode koja će to da odradi ČISTIJE i JEFTINIJE
+// odnosno metode koja će da vraća boolean (vidi wine projekat) i na osnovu toga će angularu
+// da bude rečeno da spreči submit forme ako sve nije ispravno
+// drugo, ovde takođe submit prepoznaje izmenu od prostog dodavanje i spram toga će se i ponašati
+// i prozivati servis

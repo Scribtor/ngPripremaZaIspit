@@ -56,3 +56,6 @@ export class PaginationComponent implements OnInit,OnChanges {
     this.odaberiStranu(this.dobaviBrojStrana());
   }
 }
+// Sve je manje više već rečeno u komentarima u prethodnom projektu 
+// (i dalje stoji na GitHub-u na istom mestu)
+// Odnosno ono što nije, stoji u komentaru html-a za koji je "vezan" ovaj "placeholder" fajl
