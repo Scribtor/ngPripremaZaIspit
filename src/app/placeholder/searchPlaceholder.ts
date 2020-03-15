@@ -18,3 +18,6 @@ pretraga:FormGroup;
     this.query.emit(this.pretraga.value.upit);
   }
 }
+// ts koji odgovara html-u pretrage
+// ako se veličina forme poveća, FormBuilder.group blok koda zaslužuje da bude izvučen u metodu
+// slično kao što je urađeno na "placeholderu" forme
